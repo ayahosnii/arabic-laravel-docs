@@ -26,7 +26,7 @@ Events serve as a great way to decouple لفصل various aspects of your applica
 <a name="registering-events-and-listeners"></a>
 ## Registering Events & Listeners
 
-The `App\Providers\EventServiceProvider` included with your Laravel application provides a convenient place to register all of your application's event listeners. The `listen` property contains an array of all events (keys) and their listeners (values). You may add as many events to this array as your application requires. For example, let's add an `OrderShipped` event:
+The `App\Providers\EventServiceProvider` included with your Laravel application provides a convenient مناسبًا place to register all of your application's event listeners. The `listen` property contains an array of all events (keys) and their listeners (values). You may add as many events to this array as your application requires. For example, let's add an `OrderShipped` event:
 
     use App\Events\OrderShipped;
     use App\Listeners\SendShipmentNotification;
@@ -47,13 +47,13 @@ The `App\Providers\EventServiceProvider` included with your Laravel application 
 <a name="generating-events-and-listeners"></a>
 ### Generating Events & Listeners
 
-Of course, manually creating the files for each event and listener is cumbersome. Instead, add listeners and events to your `EventServiceProvider` and use the `event:generate` Artisan command. This command will generate any events or listeners that are listed in your `EventServiceProvider` that do not already exist:
+Of course, manually creating the files for each event and listener is cumbersome [بياخد وقت] مرهقًا. Instead, add listeners and events to your `EventServiceProvider` and use the `event:generate` Artisan command. This command الأمر will generate any events or listeners that are listed in your `EventServiceProvider` that do not already exist:
 
 ```shell
 php artisan event:generate
 ```
 
-Alternatively, you may use the `make:event` and `make:listener` Artisan commands to generate individual events and listeners:
+Alternatively بدلاً من ذلك, you may use the `make:event` and `make:listener` Artisan commands to generate individual events and listeners:
 
 ```shell
 php artisan make:event PodcastProcessed
@@ -114,7 +114,7 @@ Like queued jobs, you may use the `onConnection`, `onQueue`, and `delay` methods
         //
     })->onConnection('redis')->onQueue('podcasts')->delay(now()->addSeconds(10)));
 
-If you would like to handle anonymous queued listener failures, you may provide a closure to the `catch` method while defining the `queueable` listener. This closure will receive the event instance and the `Throwable` instance that caused the listener's failure:
+If you would like to handle معالجة anonymous queued قائمة الانتظار listener failures, you may provide a closure to the `catch` method while defining the `queueable` listener. This closure will receive the event instance and the `Throwable` instance that caused the listener's failure:
 
     use App\Events\PodcastProcessed;
     use function Illuminate\Events\queueable;
